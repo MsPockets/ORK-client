@@ -66,7 +66,67 @@ const viewAward = function (data) {
 const removeAward = function (data) {
   return $.ajax({
     url: config.apiUrl + "/awards/:id",
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const addAttendance = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/attendances",
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const viewAttendance = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/attendacnes/:id",
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const removeAttendance = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/attendances/:id",
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const addUser = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/users",
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const viewUser = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/users/:id",
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const removeUser = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/users/:id",
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -80,5 +140,13 @@ const removeAward = function (data) {
     signIn,
     changePassword,
     signOut,
-    addAward
+    addAward,
+    viewAward,
+    removeAward,
+    addAttendance,
+    viewAttendance,
+    removeAttendance,
+    addUser,
+    viewUser,
+    removeUser
   }

@@ -24,8 +24,7 @@ const onSignInSuccess = function(response) {
   $('#sign-out').show()
   $('.sign-up-button').hide()
   $('#sign-in-form').hide()
-  $('#instructions').show()
-  $('#start-game').show()
+  
 }
 
 const onSignInFailure = function(response) {
@@ -57,12 +56,7 @@ const onSignOutSuccess = function(response) {
   $('#game-board').hide()
   $('#change-password-form').hide()
   $('#sign-out').hide()
-  $('#reset').hide()
-  clearBoxes()
-  $('#game-counter').hide()
-  $('#current-player').hide()
-  $('#start-game').hide()
-  $('#get-games').hide()
+  
   gamesPlayed = 0
 }
 const onSignOutFailure = function(response) {
