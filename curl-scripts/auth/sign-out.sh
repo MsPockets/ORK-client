@@ -1,4 +1,4 @@
-curl "https://mspockets.github.io/tic-tac-toe/sign-out" \
+curl "https://mspockets.github.io/ork-client/sign-out" \
   --include \
   --request DELETE \
   --header "Authorization: Token token=${TOKEN}"\

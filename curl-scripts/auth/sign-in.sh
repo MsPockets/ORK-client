@@ -1,4 +1,4 @@
-curl "https://mspockets.github.io/tic-tac-toe/sign-in" \
+curl "https://mspockets.github.io/ork-client/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

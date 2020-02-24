@@ -1,4 +1,4 @@
-curl "https://mspockets.github.io/tic-tac-toe/games" \
+curl "https://mspockets.github.io/ork-client/games" \
   --include \
   --request GET \
   --header "Authorization: Token token=${TOKEN}"\

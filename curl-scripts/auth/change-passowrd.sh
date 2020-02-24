@@ -1,4 +1,4 @@
-curl "https://mspockets.github.io/tic-tac-toe/change-password" \
+curl "https://mspockets.github.io/ork-client/change-password" \
   --include \
   --request PATCH \
   --header "Authorization: Token token=${TOKEN}"\
