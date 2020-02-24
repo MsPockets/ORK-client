@@ -42,9 +42,49 @@ const onSignOut  = function(event) {
       .catch(ui.onSignOutFailure)
 }
 
+const onStartGame = function(event) {
+  const form = event.target
+  const data = getFormFields(form)
+    api.startPlaying()
+      .then(ui.onStartPlayingSuccess)
+      .catch(ui.onStartPlayingFailure)
+    
+}
+
+
+const onMakeMove = function(event) {
+  // console.log(event.target)
+  //console.log(store.game)
+    api.makeMove(event)
+      .then(() => ui.onMakeMoveSuccess(event))
+      .catch(ui.onMakeMoveFailure)
+  
+}
+
+const onReset = function(event) {
+  const form = event.target
+  const data = getFormFields(form)
+    api.reset()
+      .then(ui.onResetSuccess)
+      .catch(ui.onResetFailure)
+}
+
+const onGetGames = function(event) {
+  const form = event.target
+  const data = getFormFields(form)
+    api.getGames(data)
+      .then(ui.onGetGamesSuccess)
+      .catch(ui.onGetGamesFailure)
+
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onStartGame,
+  onMakeMove,
+  onReset,
+  onGetGames
 }

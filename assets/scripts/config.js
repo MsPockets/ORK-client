@@ -1,7 +1,9 @@
+'use strict'
+
 let apiUrl
 const apiUrls = {
-  development: 'https://owlbear-hatchery.herokuapp.com/',
-  production: 'https://owlbear-hatchery-production.herokuapp.com/'
+  development: 'https://owlbear-hatchery.herokuapp.com',
+  production: 'https://owlbear-hatchery-production.herokuapp.com'
 }
 
 if (window.location.hostname === 'localhost') {

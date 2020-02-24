@@ -1,0 +1,52 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+
+body {
+  font-family: 'Kaushan Script', cursive;
+  background: url(https://wallpaperaccess.com/full/729396.jpg);
+  background-size: 100%;
+  text-align: center;
+  align-content: center;
+}
+
+button{
+  border: none;
+  background-color: #58c9c9;
+}
+#container {
+  display: center;
+}
+.game-tile {
+  height: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  text-transform: uppercase;
+  font-size: 75px;
+  border-top: 5px solid teal;
+  border-right: 5px solid teal;
+  box-sizing: margin-box;
+  background-color: transparent;
+  
+}
+.game-tile:nth-child(3n){
+  border-right: none;
+}
+.row1 > .game-tile {
+  border-top: none;
+}
+.row1, .row2, .row3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success {
+  background-color: #61ffd3;
+  color: #39a593;
+}
+.failure {
+  background-color:  #CB8CBD;
+  color: #db3f3f;
+}
+#message {
+  font-size: 30px;
+}

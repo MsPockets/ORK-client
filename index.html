@@ -1,13 +1,91 @@
 <!DOCTYPE html>
-<head>
-  <title>Amtgard O.R.K.</title>
-  <style>
+<html>
+    <head>
+      <title>Amtgard O.R.K.</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+      </style>
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  </style>
-</head>
-<body>
-<h1>bleh</h1>
-</body>
-<footer>
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+    <h1>3-in-a-row</h1>
+      <p id="message"></p>
+      <form id="sign-up-form">
+        <fieldset>
+          <h3>Sign Up</h3>
+          <input name="credentials[email]" type="string" id="sign-up-email" placeholder="example@example.com" required>
+          <br>
+          <input name="credentials[password]" type="password" id="sign-up-password" placeholder="Password" required>
+          <br>
+          <input name="credentials[password_confirmation]" type="password" id="confirm-password" placeholder="Confirm Password" required>
+          <br>
+          <button id="sign-up" type="submit">Sign Up</button>
+        </fieldset>
+      </form>
 
-</footer>
+      <form id="sign-in-form">
+        <fieldset>
+          <h3>Sign In</h3>
+          <input name="credentials[email]" type="string" id="sign-in-email" placeholder="Your email here" required>
+          <br>
+          <input name="credentials[password]" type="password" id="sign-in-password" placeholder="Your password here">
+          <br>
+          <button id="sign-in" type="submit">Sign In</button>
+        </fieldset>
+      </form>
+
+      <form id="change-password-form">
+        <fieldset>
+          <h3>Change Password</h3>
+          <input name="passwords[old]" type="password" id="OLDPW" placeholder="Old password" required>
+          <br>
+          <input name="passwords[new]" type="password" id="NEWPW" placeholder="New password" required>
+          <br>
+          <button id="change-password" type="submit">Change Password</button>
+        </fieldset>
+      </form>
+      <br>
+
+      <button id="sign-out" type="submit">Sign Out</button>
+    <br>
+    <br>
+      <div class="container" id="game-board">
+        <div class="row1">
+          <div class="game-tile" id="0"></div>
+          <div class="game-tile" id="1"></div>
+          <div class="game-tile" id="2"></div>
+        </div>
+        <div class="row2">
+          <div class="game-tile" id="3"></div>
+          <div class="game-tile" id="4"></div>
+          <div class="game-tile" id="5"></div>
+        </div>
+        <div class="row3">
+          <div class="game-tile" id="6"></div>
+          <div class="game-tile" id="7"></div>
+          <div class="game-tile" id="8"></div>
+        </div>
+      </div>
+    <br>
+      <div id="instructions">
+        <h2>How to Play</h2>
+        <p>3 in a row, or Tic-Tac-Toe, is a simple game. The players take turns placing their markers on the game board. The goal is to get 3 of your markers in a row, while using your markers to block your opponent's.</p>
+        <p>Click the start button to bring up the game board. Then select your token and place it in a square by clicking that square</p>
+      </div>
+
+      <button id="start-game">Start Playing</button>
+      <button id="reset">New Game</button>
+      <div id="game-info">
+        <h4 id="current-player"></h4>
+
+        <h5 id="game-counter"></h5>
+      </div>
+      <button id="get-games">How many games have I played?</button>
+    </body>
+</html>
