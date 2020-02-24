@@ -44,64 +44,10 @@ const signOut = function() {
   })
 }
 
-const startPlaying = function () {
-  return $.ajax({
-    url: config.apiUrl + "/games",
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-const makeMove = function (event) {
-  //console.log($(event.target).attr('id'))
-  return $.ajax({
-    url: config.apiUrl + "/games/" + store.game.id,
-    method: "PATCH",
-    headers: {
-      Authorization: 'Token token=' +store.user.token
-    },
-    data: {
-      "game": {
-        "cell": {
-          "index": $(event.target).attr('id'),
-          "value": store.playerMarker
-        },
-        "over": false
-      }
-    }
-  })
-}
 
-const reset = function(event) {
-  return $.ajax({
-    url: config.apiUrl + "/games",
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const getGames = function (event) {
-  return $.ajax({
-    url: config.apiUrl + "/games",
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-
-  
   module.exports = {
     signUp,
     signIn,
     changePassword,
-    signOut,
-    startPlaying,
-    makeMove,
-    reset,
-    getGames
+    signOut
   }
