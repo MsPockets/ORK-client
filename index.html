@@ -16,18 +16,38 @@
     <body>
     <h1>Amtgard Online Record Keeper</h1>
       <p id="message"></p>
-      <form id="sign-up-form">
-        <fieldset>
-          <h3>Sign Up</h3>
-          <input name="credentials[email]" type="string" id="sign-up-email" placeholder="example@example.com" required>
-          <br>
-          <input name="credentials[password]" type="password" id="sign-up-password" placeholder="Password" required>
-          <br>
-          <input name="credentials[password_confirmation]" type="password" id="confirm-password" placeholder="Confirm Password" required>
-          <br>
-          <button id="sign-up" type="submit">Sign Up</button>
-        </fieldset>
-      </form>
+      <div class="container sign-up-button">
+        <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Click here to sign up!</button>
+              <div class="modal fade" id="sign-up-modal">
+                <div class="modal-dialogue">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      Sign Up
+                    </div>
+                    <div class="modal-body"> 
+                      <form id="sign-up-form">
+                        <h3>Sign Up</h3>
+                          <fieldset>
+                            <input name="credentials[email]" type="string" id="sign-up-email" placeholder="example@example.com"   required>
+                            <br>
+                            <input name="credentials[password]" type="password"   id="sign-up-password" placeholder="Password" required>
+                            <br>
+                            <input name="credentials[password_confirmation]"  type="password" id="confirm-password"  placeholder="Confirm Password" required>
+                          </fieldset>
+                        <button id="sign-up" type="submit" class="btn-default" data-dismiss="#modal">Sign Up</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-toggle="modal">Close</button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
       <form id="sign-in-form">
         <fieldset>

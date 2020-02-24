@@ -43,11 +43,42 @@ const signOut = function() {
   
   })
 }
+const addAward = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/awards",
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const viewAward = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/awards/:id",
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+const removeAward = function (data) {
+  return $.ajax({
+    url: config.apiUrl + "/awards/:id",
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
 
 
   module.exports = {
     signUp,
     signIn,
     changePassword,
-    signOut
+    signOut,
+    addAward
   }
