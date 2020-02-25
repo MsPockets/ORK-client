@@ -1,163 +1,144 @@
 const store = require('./store')
 const api = require('./api')
  
-
+const successMessage = function () {
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+const failureMessage = function () {
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
 
 const onSignUpSuccess = function(response) {
   $('#message').text(response.user.email + ' signed up')
   $('#sign-up-form').trigger('reset')
-  $('#message').addClass('success')
   $("#sign-up-modal").modal('hide')
+  successMessage()
 }
 const onSignUpFailure = function(response) {
   $("#sign-up-modal").modal('hide')
   $('#message').text('Failed to sign up')
-  $('#message').addClass('failure')
   $('#sign-up-form').trigger('reset')
+  failureMessage()
 }
 
 const onSignInSuccess = function(response) {
   $('#message').text(response.user.email + ' signed in')
   $('#sign-in-form').trigger('reset')
   store.user = response.user
-  $('#message').removeClass()
-  $('#message').addClass('success')
   $('#change-password-form').show()
   $('#sign-out').show()
   $('.sign-up-button').hide()
   $('#sign-in-form').hide()
   $("#sign-up-modal").modal('hide')
+  successMessage()
   
 }
 
 const onSignInFailure = function(response) {
   $('#sign-in-form').trigger('reset')
   $('#message').text('Failed to sign in')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  failureMessage()
 }
 
 const onChangePasswordSuccess = function(response) {
   $('#message').text('Password successfully changed')
   $('#change-password-form').trigger('reset')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  successMessage()
 }
 const onChangePasswordFailure = function(response) {
   $('#change-password-form').trigger('reset')
   $('#message').text('Failed to change password')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  failureMessage()
 }
 
 const onSignOutSuccess = function(response) {
   $('#message').text('Signed Out')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  successMessage()
   $('.sign-up-button').show()
   $('#sign-in-form').show()
-  $('#game-board').hide()
   $('#change-password-form').hide()
   $('#sign-out').hide()
-  
-  gamesPlayed = 0
 }
 const onSignOutFailure = function(response) {
   $('#message').text('Failed to sign out')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  failureMessage()
   
 }
 const onAddAwardSuccess = function(response) {
   $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  console.log('ding')
+  successMessage()
+  
 }
 const onAddAwardFailure = function(response) {
-$('#message').text('Failed to add award')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to add award')
+  failureMessage() 
 }
 const onViewAwardSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('Awards are displayed below')
+  successMessage()
 }
 const onViewAwardFailure = function(response) {
-$('#message').text('Failed to view award')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to view award')
+  failureMessage() 
 }
 const onRemoveAwardSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('Award Deleted')
+  successMessage()
 }
 const onRemoveAwardFailure = function(response) {
-$('#message').text('Failed to remove award')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to remove award')
+  failureMessage() 
 }
 const onAddAttendanceSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('Attendance added')
+  successMessage()
 }
 const onAddAttendanceFailure = function(response) {
-$('#message').text('Failed to add attendance')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to add attendance')
+  failureMessage() 
 }
 const onViewAttendanceSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('Attendances are shown below')
+  successMessage()
 }
 const onViewAttendanceFailure = function(response) {
-$('#message').text('Failed to view attendance')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to view attendance')
+  failureMessage() 
 }
 const onRemoveAttendanceSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('Added Attendance')
+  successMessage()
 }
 const onRemoveAttendanceFailure = function(response) {
-$('#message').text('Failed to remove attendance')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to remove attendance')
+  failureMessage()  
 }
 const onAddUserSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('User Born')
+  successMessage()
 }
 const onAddUserFailure = function(response) {
-$('#message').text('Failed to add user')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to add user')
+  failureMessage()  
 }
 const onViewUserSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('Users are displayed below')
+  successMessage()
+  
 }
 const onViewUserFailure = function(response) {
-$('#message').text('Failed to view user')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to view user')
+  failureMessage() 
 }
 const onRemoveUserSuccess = function(response) {
-  $('#message').text('Award Created')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message').text('User Slain')
+  successMessage()
 }
 const onRemoveUserFailure = function(response) {
-$('#message').text('Failed to remove user')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message').text('Failed to remove user')
+  failureMessage()  
 }
 
 

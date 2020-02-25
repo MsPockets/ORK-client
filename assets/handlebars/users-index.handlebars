@@ -1,0 +1,19 @@
+{{#each users as |user|}}
+  {{log user}}
+  <section data-id="{{user.id}}">
+    <h6>User:</h6>
+    <h3>
+      {{limit User.email 15}}
+    </h3>
+    <h6>Awards</h6>
+    <p>
+      {{#if user.awards}}
+        {{book.author}}
+      {{else}}
+        No awards.
+      {{/if}}
+    </p>
+    {{> partial id=user.id}}
+  </section>
+
+{{/each}}

@@ -115,7 +115,7 @@ const addUser = function (data) {
 }
 const viewUser = function (data) {
   return $.ajax({
-    url: config.apiUrl + "/users/:id",
+    url: config.apiUrl + "/users",
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
