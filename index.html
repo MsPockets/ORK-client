@@ -18,31 +18,30 @@
       <p id="message"></p>
       <div class="container sign-up-button">
         <div class="row">
-            <div class="col-md-4">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Click here to sign up!</button>
-              <div class="modal fade" id="sign-up-modal">
-                <div class="modal-dialogue">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      Sign Up
-                    </div>
-                    <div class="modal-body"> 
-                      <form id="sign-up-form">
-                        <h3>Sign Up</h3>
-                          <fieldset>
-                            <input name="credentials[email]" type="string" id="sign-up-email" placeholder="example@example.com"   required>
-                            <br>
-                            <input name="credentials[password]" type="password"   id="sign-up-password" placeholder="Password" required>
-                            <br>
-                            <input name="credentials[password_confirmation]"  type="password" id="confirm-password"  placeholder="Confirm Password" required>
-                          </fieldset>
-                        <button id="sign-up" type="submit" class="btn-default" data-dismiss="#modal">Sign Up</button>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-toggle="modal">Close</button>
-                    </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Click here to sign up!</button>
+            <div class="modal" id="sign-up-modal">
+              <div class="modal-dialogue">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    Sign Up      
                   </div>
+                  <div class="modal-body"> 
+                    <form id="sign-up-form">                        <h3>Sign Up</h3>
+                        <fieldset>
+                          <input name="credentials[email]" type="string" id="sign-up-email" placeholder="example@example.com"   required>
+                          <br>
+                          <input name="credentials[password]" type="password"   id="sign-up-password" placeholder="Password" required>
+                          <br>
+                          <input name="credentials[password_confirmation]"  type="password" id="confirm-password"  placeholder="Confirm Password" required>
+                        </fieldset>
+                      <button id="sign-up" type="submit" class="btn-default">Sign Up</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -73,6 +72,24 @@
       <br>
 
       <button id="sign-out" type="submit">Sign Out</button>
- 
+      
+      <form id="add-award">
+        <fieldset>
+          <h3>Add Award</h3>
+          <input name="level" type="string" id="level" placeholder="(Non-)Noble Title" required>
+          <br>
+          <input name="name" type="password" id="name" placeholder="Lord/Lady">
+          <br>
+          <button id="add-award" type="submit">Add Award</button>
+        </fieldset>
+      </form>
+
+      
+
+      <div id="output"></div>
+
     </body>
+    <footer>
+
+    </footer>
 </html>
