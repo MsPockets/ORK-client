@@ -13,6 +13,5 @@ $(() => {
   $('#add-award').hide()
   $('#get-awards').hide()
   $('#update-award').on('submit', authEvents.onEditAward)
-
   })
   
