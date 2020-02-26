@@ -44,7 +44,8 @@ const onAddAward = function(event) {
   const form = event.target
   const data = getFormFields(form)
     api.addAward(data)
-      .then(ui.onAddAwardSuccess)
+      .then(ui.onAddAwardSuccess, (function () {
+        onViewAward(event)}))
       .catch(ui.onAddAwardFailure)
 }
 
@@ -56,67 +57,33 @@ const onViewAward = function(event) {
 }
 
 const onRemoveAward = function(event) {
-  const form = event.target
-  const data = getFormFields(form)
-    api.removeAward(data)
-      .then(ui.onRemoveAwardSuccess)
+  const id = $(event.target).data('id')
+  console.log(id)
+  console.log('click')
+    api.removeAward(id)
+      .then(function () {
+        onViewAward(event)}
+      )
       .catch(ui.onRemoveAwardFailure)
 }
-const onAddAttencance = function(event) {
+
+const onEditAward = function (event) {
+  event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-    api.addAttendance(data)
-      .then(ui.onAddAttencanceSuccess)
-      .catch(ui.onAddAttencanceFailure)
+    api.editAward(data)
+      .then(ui.onEditAwardSuccess)
+      .catch(ui.onEditAwardFailure)
 }
-const onViewAttendance = function(event) {
-  const form = event.target
-  const data = getFormFields(form)
-    api.viewAttendance(data)
-      .then(ui.onViewAttendanceSuccess)
-      .catch(ui.onViewAttendanceFailure)
-}
-const onRemoveAttendance = function(event) {
-  const form = event.target
-  const data = getFormFields(form)
-    api.removeAttendance(data)
-      .then(ui.onRemoveAttendanceSuccess)
-      .catch(ui.onRemoveAttendanceFailure)
-}
-const onAddUser = function(event) {
-  const form = event.target
-  const data = getFormFields(form)
-    api.addUser(data)
-      .then(ui.onAddUserSuccess)
-      .catch(ui.onAddUserFailure)
-}
-const onViewUser = function(event) {
-  const form = event.target
-  const data = getFormFields(form)
-    api.viewUser(data)
-      .then(ui.onViewUserSuccess)
-      .catch(ui.onViewUserFailure)
-}
-const onRemoveUser = function(event) {
-  const form = event.target
-  const data = getFormFields(form)
-    api.removeUser(data)
-      .then(ui.onRemoveUserSuccess)
-      .catch(ui.onRemoveUserFailure)
-}
+
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onAddAttencance,
-  onViewAttendance,
-  onRemoveAttendance,
   onAddAward,
   onViewAward,
   onRemoveAward,
-  onAddUser,
-  onViewUser,
-  onRemoveUser
+  onEditAward
 }

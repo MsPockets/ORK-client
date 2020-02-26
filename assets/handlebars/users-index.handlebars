@@ -1,5 +1,4 @@
 {{#each awards as |award|}}
-  {{log "hi"}}
   <section data-id="{{award.id}}">
     <h6>Type:</h6>
     <h3>
@@ -7,11 +6,12 @@
     </h3>
     <h6>Title of</h6><h6>{{award.name}}</h6>
     <p>
-      {{#if award.user_id}}
-        {{award.user.id}}
+      {{#if award.user}}
+        {{award.user.email}}
       {{else}}
         No users have this award
       {{/if}}
     </p>
+    {{> partial id=award.id}}
   </section>
 {{/each}}

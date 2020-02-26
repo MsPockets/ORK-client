@@ -31,6 +31,8 @@ const onSignInSuccess = function(response) {
   store.user = response.user
   $('#change-password-form').show()
   $('#sign-out').show()
+  $('#add-award').show()
+  $('#get-awards').show()
   $('.sign-up-button').hide()
   $('#sign-in-form').hide()
   $("#sign-up-modal").modal('hide')
@@ -62,6 +64,8 @@ const onSignOutSuccess = function(response) {
   $('#sign-in-form').show()
   $('#change-password-form').hide()
   $('#sign-out').hide()
+  $('#add-award').hide()
+  $('#get-awards').hide()
 }
 const onSignOutFailure = function(response) {
   $('#message').text('Failed to sign out')
@@ -69,12 +73,16 @@ const onSignOutFailure = function(response) {
   
 }
 const onAddAwardSuccess = function(response) {
+  console.log('boop')
   $('#message').text('Award Created')
+  $('#add-award').trigger('reset')
   successMessage()
   
 }
 const onAddAwardFailure = function(response) {
+  console.log('poob')
   $('#message').text('Failed to add award')
+  $('#add-award').trigger('reset')
   failureMessage() 
 }
 const onViewAwardSuccess = function(data) {
@@ -94,36 +102,12 @@ const onRemoveAwardFailure = function(response) {
   $('#message').text('Failed to remove award')
   failureMessage() 
 }
-
-const onAddUserSuccess = function(response) {
-  $('#message').text('User Born')
+const onEditAwardSuccess = function (response) {
   successMessage()
 }
-const onAddUserFailure = function(response) {
-  $('#message').text('Failed to add user')
-  failureMessage()  
+const onEditAwardFailure = function (response) {
+  failureMessage()
 }
-const onViewUserSuccess = function(data) {
-  console.log(data)
-  $('#message').text('Users are displayed below')
-  successMessage()
-}
-const onViewUserFailure = function(response) {
-  $('#message').text('Failed to view user')
-  failureMessage() 
-}
-const onRemoveUserSuccess = function(response) {
-  $('#message').text('User Slain')
-  successMessage()
-}
-const onRemoveUserFailure = function(response) {
-  $('#message').text('Failed to remove user')
-  failureMessage()  
-}
-
-
-
-
 
 module.exports = {
   onSignUpSuccess,
@@ -139,11 +123,7 @@ module.exports = {
   onViewAwardSuccess, 
   onViewAwardFailure, 
   onRemoveAwardSuccess, 
-  onRemoveAwardFailure,  
-  onAddUserSuccess, 
-  onAddUserFailure, 
-  onViewUserSuccess, 
-  onViewUserFailure, 
-  onRemoveUserSuccess, 
-  onRemoveUserFailure
+  onRemoveAwardFailure,
+  onEditAwardSuccess,
+  onEditAwardFailure
 }

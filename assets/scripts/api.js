@@ -44,15 +44,18 @@ const signOut = function() {
   })
 }
 const addAward = function (data) {
+  console.log('api hit')
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + "/awards",
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data: {award:data}
   })
 }
+
 const viewAward = function (data) {
   return $.ajax({
     url: config.apiUrl + "/awards",
@@ -63,72 +66,25 @@ const viewAward = function (data) {
   })
 }
 const removeAward = function (data) {
+  const id = $(event.target).data('id')
   return $.ajax({
-    url: config.apiUrl + "/awards/:id",
+    url: config.apiUrl + "/awards/" + id,
     method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
-const addAttendance = function (data) {
-  return $.ajax({
-    url: config.apiUrl + "/attendances",
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
-const viewAttendance = function (data) {
-  return $.ajax({
-    url: config.apiUrl + "/attendacnes/:id",
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
-const removeAttendance = function (data) {
-  return $.ajax({
-    url: config.apiUrl + "/attendances/:id",
-    method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
-const addUser = function (data) {
-  return $.ajax({
-    url: config.apiUrl + "/users",
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: data
-  })
-}
-const viewUser = function () {
-  return $.ajax({
-    url: config.apiUrl + "/users",
-    method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
-const removeUser = function (data) {
+const editAward = function (data) {
+  console.log(data)
+  const id = data.id
   return $.ajax({
-    url: config.apiUrl + "/users/:id",
-    method: 'DELETE',
+    url: config.apiUrl + "/awards/" + id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data: {award:data}
   })
 }
 
@@ -141,10 +97,5 @@ const removeUser = function (data) {
     addAward,
     viewAward,
     removeAward,
-    addAttendance,
-    viewAttendance,
-    removeAttendance,
-    addUser,
-    viewUser,
-    removeUser
+    editAward
   }
