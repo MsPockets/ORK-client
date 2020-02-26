@@ -55,12 +55,11 @@ const addAward = function (data) {
 }
 const viewAward = function (data) {
   return $.ajax({
-    url: config.apiUrl + "/awards/:id",
+    url: config.apiUrl + "/awards",
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
   })
 }
 const removeAward = function (data) {
@@ -113,14 +112,13 @@ const addUser = function (data) {
     data: data
   })
 }
-const viewUser = function (data) {
+const viewUser = function () {
   return $.ajax({
     url: config.apiUrl + "/users",
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: data
+    }
   })
 }
 const removeUser = function (data) {

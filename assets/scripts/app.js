@@ -8,6 +8,7 @@ $(() => {
   $('#change-password-form').on('submit', authEvents.onChangePassword).hide()
   $('#sign-out').on('click', authEvents.onSignOut).hide()
   $('#add-award').on('submit', authEvents.onAddAward)
-  $('#get-users').on('click', authEvents.onViewUser)
+  $('#get-awards').on('click', authEvents.onViewAward)
+  $('#content').show()
   })
   

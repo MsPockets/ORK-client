@@ -3,9 +3,7 @@
     <head>
       <title>Amtgard O.R.K.</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-        @import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
-      </style>
+      
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -72,24 +70,23 @@
       <br>
 
       <button id="sign-out" type="submit">Sign Out</button>
-      <button id="get-users" type="btn-default">Show all users</button>
+      <button id="get-awards" type="btn-default">Show all awards</button>
       <form id="add-award">
         <fieldset>
           <h3>Add Award</h3>
           <input name="level" type="string" id="level" placeholder="(Non-)Noble Title" required>
           <br>
-          <input name="name" type="password" id="name" placeholder="Lord/Lady">
-          <!-- <input name="user-id" type="number" id="user-id" label="User Id" placeholder="User Id (23)"> -->
+          <input name="name" type="string" id="name" placeholder="Lord/Lady">
+          <input name="user-id" type="number" id="user-id" label="User Id" placeholder="User Id (23)">
           <br>
           <button id="add-award-button" type="submit">Add Award</button>
         </fieldset>
       </form>
 
-      
-
-      <div id="output"></div>
-
     </body>
+    <main>
+      <div id="content" class="content"></div>
+    </main>
     <footer>
 
     </footer>

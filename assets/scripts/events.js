@@ -49,9 +49,8 @@ const onAddAward = function(event) {
 }
 
 const onViewAward = function(event) {
-  const form = event.target
-  const data = getFormFields(form)
-    api.viewAward(data)
+  event.preventDefault()
+    api.viewAward()
       .then(ui.onViewAwardSuccess)
       .catch(ui.onViewAwardFailure)
 }

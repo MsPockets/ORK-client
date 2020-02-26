@@ -1,5 +1,7 @@
 const store = require('./store')
 const api = require('./api')
+const handlebars = require('handlebars')
+const showAwardsTemplate = require('../handlebars/users-index.handlebars')
  
 const successMessage = function () {
   $('#message').removeClass()
@@ -75,9 +77,10 @@ const onAddAwardFailure = function(response) {
   $('#message').text('Failed to add award')
   failureMessage() 
 }
-const onViewAwardSuccess = function(response) {
+const onViewAwardSuccess = function(data) {
   $('#message').text('Awards are displayed below')
   successMessage()
+  $('#content').html(showAwardsTemplate(data))
 }
 const onViewAwardFailure = function(response) {
   $('#message').text('Failed to view award')
@@ -91,30 +94,7 @@ const onRemoveAwardFailure = function(response) {
   $('#message').text('Failed to remove award')
   failureMessage() 
 }
-const onAddAttendanceSuccess = function(response) {
-  $('#message').text('Attendance added')
-  successMessage()
-}
-const onAddAttendanceFailure = function(response) {
-  $('#message').text('Failed to add attendance')
-  failureMessage() 
-}
-const onViewAttendanceSuccess = function(response) {
-  $('#message').text('Attendances are shown below')
-  successMessage()
-}
-const onViewAttendanceFailure = function(response) {
-  $('#message').text('Failed to view attendance')
-  failureMessage() 
-}
-const onRemoveAttendanceSuccess = function(response) {
-  $('#message').text('Added Attendance')
-  successMessage()
-}
-const onRemoveAttendanceFailure = function(response) {
-  $('#message').text('Failed to remove attendance')
-  failureMessage()  
-}
+
 const onAddUserSuccess = function(response) {
   $('#message').text('User Born')
   successMessage()
@@ -123,10 +103,10 @@ const onAddUserFailure = function(response) {
   $('#message').text('Failed to add user')
   failureMessage()  
 }
-const onViewUserSuccess = function(response) {
+const onViewUserSuccess = function(data) {
+  console.log(data)
   $('#message').text('Users are displayed below')
   successMessage()
-  
 }
 const onViewUserFailure = function(response) {
   $('#message').text('Failed to view user')
@@ -159,13 +139,7 @@ module.exports = {
   onViewAwardSuccess, 
   onViewAwardFailure, 
   onRemoveAwardSuccess, 
-  onRemoveAwardFailure, 
-  onAddAttendanceSuccess, 
-  onAddAttendanceFailure, 
-  onViewAttendanceSuccess, 
-  onViewAttendanceFailure, 
-  onRemoveAttendanceSuccess, 
-  onRemoveAttendanceFailure, 
+  onRemoveAwardFailure,  
   onAddUserSuccess, 
   onAddUserFailure, 
   onViewUserSuccess, 
