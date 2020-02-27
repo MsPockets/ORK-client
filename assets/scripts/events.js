@@ -71,16 +71,21 @@ const onRemoveAward = function(event) {
 
 const onEditAward = function (event) {
   //change event listener to include the form so it doesnt refresh
-  //copy the section data-id and use that for the route for the request
-
-  event.preventDefault()
   const form = event.target
-  console.log(form['target-id'])
+  console.log(form)
   const data = getFormFields(form)
   console.log(data)
     api.editAward(data)
       .then(ui.onEditAwardSuccess)
       .catch(ui.onEditAwardFailure)
+
+    return false
+}
+
+const editClick = function (event) {
+    const data = $(event.target).data('award-id')
+    $('#edit-award-form').show()
+    $('#award-id').val(data)
 }
 
 
@@ -92,5 +97,6 @@ module.exports = {
   onAddAward,
   onViewAward,
   onRemoveAward,
-  onEditAward
+  onEditAward,
+  editClick
 }

@@ -11,7 +11,10 @@ $(() => {
   $('#get-awards').on('click', authEvents.onViewAward).hide()
   $('.content').on('click', '.deeleet', authEvents.onRemoveAward)
   $('#add-award').hide() 
-  $('.edit-award-form').on('submit', authEvents.onEditAward)
+  $('body').on('submit', '#edit-award-form', authEvents.onEditAward)
   $('#get-awards').hide()
+  $('#edit-award-form').hide()
+  $('.content').on('click', '.edit-award-btn', authEvents.editClick)
 })
+
   

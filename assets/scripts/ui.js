@@ -109,12 +109,6 @@ const onEditAwardFailure = function (response) {
   failureMessage()
 }
 
-$('.edit-award-btn').on('click', (e) => {
-  console.log(e);
-  const awardId = $(e.target).data('award-id');
-  $('#award-id').val(awardId);
-});
-
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,

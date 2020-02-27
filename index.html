@@ -72,11 +72,19 @@
       <button id="sign-out" type="submit">Sign Out</button>
       <br>
       <button id="get-awards" type="btn-default">Show all awards</button>
+
+      <form id="edit-award-form">
+        <fieldset>
+          <input name="level-update" type="string" id="level-update" placeholder="Noble, Order of the, Office, etc.">
+          <input name="name-update" type="string" id="name-update" placeholder="Enter a name here">
+          <input id="award-id" name="id" type="hidden">
+          <button id="edit-submit" type="submit">Finalize Change</button>
+        </fieldset> 
+      </form>
       
-      <div class="container edit-award-button">
+      <!-- <div class="container edit-award-button">
         <div class="row">
           <div class="col-md-4">
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-award-modal">Edit this award</button> -->
             <div class="modal" id="edit-award-modal">
               <div class="modal-dialogue">
                 <div class="modal-content">
@@ -84,8 +92,8 @@
                     Edit Award      
                   </div>
                   <div class="modal-body"> 
-                    <form id="edit-award-form">
-                      <h3>Update Award</h3>
+                    <form id="edit-award-form"> -->
+                      <!-- <h3>Update Award</h3>
                         <fieldset>
                           <input name="level-update" type="string" id="level-update" placeholder="Noble, Order of the, Office, etc.">
                           <input name="name-update" type="string" id="name-update" placeholder="Enter a name here">
@@ -101,8 +109,7 @@
               </div>
             </div>
           </div>
-        </div>
-    </div>
+        </div> -->
     </body>
     <main>
       <div id="content" class="content"></div>
