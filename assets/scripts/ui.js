@@ -35,7 +35,8 @@ const onSignInSuccess = function(response) {
   $('#get-awards').show()
   $('.sign-up-button').hide()
   $('#sign-in-form').hide()
-  $("#sign-up-modal").modal('hide')
+  $('#sign-up-modal').modal('hide')
+  $('#add-award').show()
   successMessage()
   
 }
