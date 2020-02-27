@@ -67,6 +67,9 @@ const onSignOutSuccess = function(response) {
   $('#sign-out').hide()
   $('#add-award').hide()
   $('#get-awards').hide()
+  $('#add-award').hide()
+  $('#content').hide()
+  $('#edit-award-form').hide()
 }
 const onSignOutFailure = function(response) {
   $('#message').text('Failed to sign out')
