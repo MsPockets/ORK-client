@@ -4,9 +4,10 @@ const ui = require('./ui')
 const store = require('./store')
 
 
+
 const onSignUp = function(event) {
   event.preventDefault()
-  const form = event.target
+  const form = event.targets
   const data = getFormFields(form)
     api.signUp(data)
       .then(ui.onSignUpSuccess)
@@ -25,6 +26,7 @@ const onSignIn = function(event) {
 const onChangePassword  = function(event) {
   event.preventDefault()
   const form = event.target
+  console.log(form)
   const data = getFormFields(form)
     api.changePassword(data)
       .then(ui.onChangePasswordSuccess)
@@ -57,7 +59,7 @@ const onViewAward = function(event) {
 }
 
 const onRemoveAward = function(event) {
-  const id = $(event.target).data('id')
+  const id = $(event.target.id).data('id')
   console.log(id)
   console.log('click')
     api.removeAward(id)
@@ -68,9 +70,14 @@ const onRemoveAward = function(event) {
 }
 
 const onEditAward = function (event) {
+  //change event listener to include the form so it doesnt refresh
+  //copy the section data-id and use that for the route for the request
+
   event.preventDefault()
   const form = event.target
+  console.log(form['target-id'])
   const data = getFormFields(form)
+  console.log(data)
     api.editAward(data)
       .then(ui.onEditAwardSuccess)
       .catch(ui.onEditAwardFailure)

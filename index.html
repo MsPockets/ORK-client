@@ -73,20 +73,25 @@
       <br>
       <button id="get-awards" type="btn-default">Show all awards</button>
       
-      <div class="container edit-award-button modal" id="edit-award-modal" tabindex="-1" role="dialog">
+      <div class="container edit-award-button">
         <div class="row">
           <div class="col-md-4">
-              <div class="modal-dialogue" role="document">
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-award-modal">Edit this award</button> -->
+            <div class="modal" id="edit-award-modal">
+              <div class="modal-dialogue">
                 <div class="modal-content">
-                  <div class="modal-header">Edit Award</div>
+                  <div class="modal-header">
+                    Edit Award      
+                  </div>
                   <div class="modal-body"> 
                     <form id="edit-award-form">
                       <h3>Update Award</h3>
-                        <fieldset class="update-award">
-                          <input name="level-update", type="string" id="level-update" placeholder="Noble, Order of the, Office, etc.">
-                          <input name="name-update", type="string" id="name-update" placeholder="Enter a name here">
-                          <button id="update-award-btn", type="submit">Modify this award</button>
+                        <fieldset>
+                          <input name="level-update" type="string" id="level-update" placeholder="Noble, Order of the, Office, etc.">
+                          <input name="name-update" type="string" id="name-update" placeholder="Enter a name here">
+                          <input id="award-id" name="target-id" type="integer">
                         </fieldset>    
+                        <button id="update-award-btn" type="submit">Modify this award</button>
                       </form>
                     </div>
                   <div class="modal-footer">
@@ -94,6 +99,7 @@
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
     </div>
