@@ -77,14 +77,12 @@ const onSignOutFailure = function(response) {
   
 }
 const onAddAwardSuccess = function(response) {
-  console.log('boop')
   $('#message').text('Award Created')
   $('#add-award').trigger('reset')
   successMessage()
   
 }
 const onAddAwardFailure = function(response) {
-  console.log('poob')
   $('#message').text('Failed to add award')
   $('#add-award').trigger('reset')
   failureMessage() 
@@ -92,6 +90,7 @@ const onAddAwardFailure = function(response) {
 const onViewAwardSuccess = function(data) {
   $('#message').text('Awards are displayed below')
   successMessage()
+  $('.content').show()
   $('#content').html(showAwardsTemplate(data))
 }
 const onViewAwardFailure = function(response) {
@@ -107,9 +106,11 @@ const onRemoveAwardFailure = function(response) {
   failureMessage() 
 }
 const onEditAwardSuccess = function (response) {
+  $('#message').text('Award Edited')
   successMessage()
 }
 const onEditAwardFailure = function (response) {
+  $('#message').text('Failed to edit award')
   failureMessage()
 }
 

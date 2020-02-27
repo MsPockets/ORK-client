@@ -78,6 +78,7 @@ const removeAward = function (data) {
 const editAward = function (data) {
   console.log(data)
   const id = data.id
+  console.log(id)
   return $.ajax({
     url: config.apiUrl + "/awards/" + id,
     method: 'PATCH',
