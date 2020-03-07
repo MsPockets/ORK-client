@@ -3,6 +3,9 @@
 This single page web app was created as the second project for General Assembly's Software Engineering Immersive course. 
 This file contains the process by which this web app was created over the course of 4 days. 
 
+**Use Case**
+This app is intended to be used to track awards, attendances, and other player records for Amtgard International. It currently allows users to sign up, sign in, change their password, sign out, add awards, view awards, edit awards, and remove awards. 
+
 **Pre-Planning**
 After the assignment was given, I drew up a wireframe and came up with some user stories to help guide me while making the application. 
 
@@ -19,6 +22,11 @@ After the assignment was given, I drew up a wireframe and came up with some user
 **Wireframe**
 ## https://imgur.com/gallery/KFE245T
 
+**Relevant Links**
+Front end repository: https://github.com/MsPockets/ORK-client
+Back end repository: https://github.com/MsPockets/ORK-api
+Front end deployed site: https://mspockets.github.io/ORK-client/
+Back end deployed site: https://owlbear-hatchery.herokuapp.com/
 
 **Day 1**
 On day 1 of the project, I worked on setting up my API as well as getting the initial client application deployed, despite it being blank. See the ork-api README.md for more information about what happened on day 1 of the project week. 
@@ -36,5 +44,5 @@ On the final day of the project, I spent my time finishing up the functionality 
 For this project I used Visual Studios Code, Google Fonts, html, CSS,  JavaScript, jQuery, Bootstrap, and Handlebars.
 
 **Moving Forward**
-Going forward I would like to implement an AI to play against as well as utilizing modals. I feel like that will make the app feel more professional and clear up some space as well as give the user clearer directions.
+Going forward I would like to add functionality to add attendances, parks, kingdoms, and principalities. All users will be able to upload a picture of themselves for all others to see. Styling is also something I would like to get to, but the stylng is less important for this use. 
 
