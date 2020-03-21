@@ -3,7 +3,7 @@
     <head>
       <title>Amtgard O.R.K.</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      
+
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -22,9 +22,9 @@
               <div class="modal-dialogue">
                 <div class="modal-content">
                   <div class="modal-header">
-                    Sign Up      
+                    Sign Up
                   </div>
-                  <div class="modal-body"> 
+                  <div class="modal-body">
                     <form id="sign-up-form">                        <h3>Sign Up</h3>
                         <fieldset>
                           <input name="credentials[email]" type="string" id="sign-up-email" placeholder="example@example.com"   required>
@@ -44,7 +44,7 @@
             </div>
           </div>
         </div>
-    </div>
+      </div>
 
       <form id="sign-in-form">
         <fieldset>
@@ -75,8 +75,8 @@
 
       <form id="add-award">
         <fieldset>
-          <input name="level" id="level" type="string" placeholder="Noble, Office, Non-Noble, etc.">
-          <input name="name" id="name" type="string" placeholder="'The Windwalker'">
+          <input name="level" id="level" type="string" placeholder="Noble, Office, Non-Noble, etc." required>
+          <input name="name" id="name" type="string" placeholder="'The Windwalker'" required>
           <button type="submit" class="add-award">Add Award</button>
         </fieldset>
       </form>
@@ -87,9 +87,9 @@
           <input name="name" type="string" id="name-update" placeholder="Enter a name here">
           <input id="award-id" name="id" type="hidden">
           <button id="edit-submit" type="submit">Finalize Change</button>
-        </fieldset> 
+        </fieldset>
       </form>
-  
+
     </body>
     <main>
       <div id="content" class="content"></div>

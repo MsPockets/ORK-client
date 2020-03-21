@@ -46,3 +46,5 @@ For this project I used Visual Studios Code, Google Fonts, html, CSS,  JavaScrip
 **Moving Forward**
 Going forward I would like to add functionality to add attendances, parks, kingdoms, and principalities. All users will be able to upload a picture of themselves for all others to see. Styling is also something I would like to get to, but the stylng is less important for this use. 
 
+I would also like to add the functionality to add a personal picture that each user uploads to their account. 
+

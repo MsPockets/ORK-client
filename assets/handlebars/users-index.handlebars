@@ -5,13 +5,6 @@
       {{award.level}}
     </h3>
     <h6>Title of</h6><h6>{{award.name}}</h6>
-    <p>
-      {{#if award.user}}
-        {{award.user.email}}
-      {{else}}
-        No users have this award
-      {{/if}}
-    </p>
     {{> partial id=award.id}}
   </section>
 {{/each}}
