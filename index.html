@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Amtgard O.R.K.</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+    <h1>Amtgard Online Record Keeper</h1>
+      <p id="message"></p>
+      <div class="container sign-up-button">
+        <div class="row">
+          <div class="col-md-4">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Click here to sign up!</button>
+            <div class="modal" id="sign-up-modal">
+              <div class="modal-dialogue">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    Sign Up
+                  </div>
+                  <div class="modal-body">
+                    <form id="sign-up-form">                        <h3>Sign Up</h3>
+                        <fieldset>
+                          <input name="credentials[email]" type="string" id="sign-up-email" placeholder="example@example.com"   required>
+                          <br>
+                          <input name="credentials[password]" type="password"   id="sign-up-password" placeholder="Password" required>
+                          <br>
+                          <input name="credentials[password_confirmation]"  type="password" id="confirm-password"  placeholder="Confirm Password" required>
+                        </fieldset>
+                      <button id="sign-up" type="submit" class="btn-default">Sign Up</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form id="sign-in-form">
+        <fieldset>
+          <h3>Sign In</h3>
+          <input name="credentials[email]" type="string" id="sign-in-email" placeholder="Your email here" required>
+          <br>
+          <input name="credentials[password]" type="password" id="sign-in-password" placeholder="Your password here">
+          <br>
+          <button id="sign-in" type="submit">Sign In</button>
+        </fieldset>
+      </form>
+
+      <form id="change-password-form">
+        <fieldset>
+          <h3>Change Password</h3>
+          <input name="passwords[old]" type="password" id="OLDPW" placeholder="Old password" required>
+          <br>
+          <input name="passwords[new]" type="password" id="NEWPW" placeholder="New password" required>
+          <br>
+          <button id="change-password" type="submit">Change Password</button>
+        </fieldset>
+      </form>
+      <br>
+
+      <button id="sign-out" type="submit">Sign Out</button>
+      <br>
+      <button id="get-awards" type="btn-default">Show all awards</button>
+
+      <form id="add-award">
+        <fieldset>
+          <input name="level" id="level" type="string" placeholder="Noble, Office, Non-Noble, etc." required>
+          <input name="name" id="name" type="string" placeholder="'The Windwalker'" required>
+          <button type="submit" class="add-award">Add Award</button>
+        </fieldset>
+      </form>
+
+      <form id="edit-award-form">
+        <fieldset>
+          <input name="level" type="string" id="level-update" placeholder="Noble, Order of the, Office, etc.">
+          <input name="name" type="string" id="name-update" placeholder="Enter a name here">
+          <input id="award-id" name="id" type="hidden">
+          <button id="edit-submit" type="submit">Finalize Change</button>
+        </fieldset>
+      </form>
+
+    </body>
+    <main>
+      <div id="content" class="content"></div>
+    </main>
+    <footer>
+
+    </footer>
+</html>
